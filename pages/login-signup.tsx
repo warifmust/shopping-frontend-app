@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { login, signUp } from "../api/baseApi";
 import { UserContext } from "../context/userContext";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { toast, ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 type Phase = "signin" | "signup";
 
@@ -57,15 +57,15 @@ export default function Login() {
       setPhase("signin");
       setError("");
       clearData();
-      toast(`Sign up is successful. Please Login to continue`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      // toast(`Sign up is successful. Please Login to continue`, {
+      //   position: "top-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // });
     } else {
       const error = data.errors[0].message;
       setError(error);
@@ -97,7 +97,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       {/* Toast */}
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -107,9 +107,9 @@ export default function Login() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
       {/* Same as */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className="max-w-lg w-full space-y-8">
         <div>
           <img

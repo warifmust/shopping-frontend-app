@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import { useContext } from "react";
 import { UserContext } from "../context/userContext";
 import { removeProductInCart, getProductsInCart } from "../api/baseApi";
-import { toast, ToastContainer } from "react-toastify";
+// import { toast, ToastContainer } from "react-toastify";
 import router from "next/router";
 import { formatTwoDecimal, capitalize } from "../util/utilities";
 
@@ -18,21 +18,21 @@ export default function Example() {
   const removeProduct = async (id: string) => {
     await removeProductInCart(id);
     await refetchCart();
-    toast(`Removed product successfully`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    // toast(`Removed product successfully`, {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
   };
 
   return (
     <Layout>
       {/* Toast */}
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -42,9 +42,9 @@ export default function Example() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
       {/* Same as */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       {/* <PaymentForm /> */}
       <div className="flex flex-col mx-20 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../context/userContext";
 import { getProducts, getProductsInCart, addToCart } from "../api/baseApi";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { toast, ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 import { formatTwoDecimal } from "../util/utilities";
 
 interface Product {
@@ -49,22 +49,22 @@ export default function Home() {
       const newData = { ...product, belongsTo: user?._id, status: "unpaid" };
       await addToCart(newData);
       await getCarts();
-      toast(`${product.name} is added to the cart`, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      // toast(`${product.name} is added to the cart`, {
+      //   position: "top-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // });
     }
   };
 
   return (
     <Layout>
       {/* Toast */}
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -74,9 +74,9 @@ export default function Home() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
       {/* Same as */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       {/* Cart */}
       <Link href="cart">
         <div className="bg-indigo-600 cursor-pointer absolute top-8 right-20 w-14 h-14 rounded-md shadow-md flex justify-center align-center 3xl:hidden">

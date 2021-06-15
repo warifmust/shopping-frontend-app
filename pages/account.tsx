@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import Layout from "../components/layout";
 import { UserContext } from "../context/userContext";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { cancelOrder, getOrder } from "../api/baseApi";
 import { formatTwoDecimal, capitalize } from "../util/utilities";
@@ -38,15 +38,15 @@ export default function Account() {
   const cancel = async (orderId: string) => {
     await cancelOrder(orderId);
     await retrieveOrder();
-    toast(`Your order has been canceled.`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+    // toast(`Your order has been canceled.`, {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
   };
 
   const logout = () => {
@@ -61,7 +61,7 @@ export default function Account() {
   return (
     <Layout>
       {/* Toast */}
-      <ToastContainer
+      {/* <ToastContainer
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
@@ -71,9 +71,9 @@ export default function Account() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-      />
+      /> */}
       {/* Same as */}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <div className="bg-white shadow overflow-hidden sm:rounded-lg mx-20 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="flex justify-between">
           <div className="px-4 py-5 sm:px-6">
@@ -225,7 +225,9 @@ export default function Account() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <button
-                              className="text-red-600 hover:text-red-700 mx-4"
+                              className={`${
+                                o.status === "canceled" ? "hidden" : "block"
+                              } text-red-600 hover:text-red-700 mx-4`}
                               onClick={() => cancel(o._id)}
                             >
                               Cancel
