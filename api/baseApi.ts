@@ -3,7 +3,7 @@ const headers = {
 };
 
 export const login = async (email: string, password: string) => {
-  const data = await fetch("http://localhost:4000/graphql", {
+  const data = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -36,7 +36,7 @@ interface User {
 }
 
 export const signUp = async (data: User) => {
-  const user = await fetch("http://localhost:4000/graphql", {
+  const user = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -57,7 +57,7 @@ export const signUp = async (data: User) => {
 };
 
 export const getProducts = async () => {
-  const products = await fetch("http://localhost:4000/graphql", {
+  const products = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -90,7 +90,7 @@ interface Product {
 }
 
 export const addToCart = async (data: Product) => {
-  const product = await fetch("http://localhost:4000/graphql", {
+  const product = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -115,7 +115,7 @@ export const addToCart = async (data: Product) => {
 };
 
 export const getProductsInCart = async (userId: string) => {
-  const product = await fetch("http://localhost:4000/graphql", {
+  const product = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -139,7 +139,7 @@ export const getProductsInCart = async (userId: string) => {
 };
 
 export const removeProductInCart = async (id: string) => {
-  const product = await fetch("http://localhost:4000/graphql", {
+  const product = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -170,7 +170,7 @@ export const createOrder = async (data: Order) => {
   const temp = JSON.stringify(data.orders);
   const orders = temp.replace(/"(\w+)"\s*:/g, "$1:");
 
-  const order = await fetch("http://localhost:4000/graphql", {
+  const order = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -198,7 +198,7 @@ export const createOrder = async (data: Order) => {
 };
 
 export const getOrder = async (userId: string) => {
-  const order = await fetch("http://localhost:4000/graphql", {
+  const order = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
@@ -226,7 +226,7 @@ export const getOrder = async (userId: string) => {
 };
 
 export const cancelOrder = async (id: string) => {
-  const order = await fetch("http://localhost:4000/graphql", {
+  const order = await fetch("https://setel-backend.herokuapp.com/graphql", {
     method: "POST",
     headers: headers,
     body: JSON.stringify({
