@@ -12,7 +12,7 @@ To Login without Sign Up new account, please use this credentials
 
 ```bash
 email: "test@test.com"
-password: |12345678|
+password: ||12345678||
 ```
 
 # Content included
