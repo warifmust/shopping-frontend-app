@@ -8,6 +8,13 @@ yarn
 yarn dev
 ```
 
+To Login without Sign Up new account, please use this credentials
+
+```bash
+email: "test@test.com"
+password: |12345678|
+```
+
 # Content included
 1. Authentication (Login and Sign Up)
 2. Add to Cart and individual cart page
