@@ -1,11 +1,11 @@
 # Setel Fullstack Challenge 
 
-This is a Setel Fullstack Challenge front end repositiry. To start:
+This is a Setel Fullstack Challenge front end repository. To start:
 
 ```bash
 git clone
 yarn
-yarn start
+yarn dev
 ```
 
 # Content included
