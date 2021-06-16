@@ -15,6 +15,9 @@ email: "test@test.com"
 password: ||12345678||
 ```
 
+# IMPORTANT NOTE
+The backend is deployed to Heroku, so for the first time daily API call, it will be slowed since the free version server is put to sleep for 30 seconds. After that, it should works well.
+
 # Content included
 1. Authentication (Login and Sign Up)
 2. Add to Cart and individual cart page
