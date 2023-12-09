@@ -1,6 +1,6 @@
-# Setel Fullstack Challenge 
+# Shopping Frontend 
 
-This is a Setel Fullstack Challenge front end repository. To start:
+This is a # Shopping App front end repository. To start:
 
 ```bash
 git clone
